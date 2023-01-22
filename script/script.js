@@ -17,3 +17,14 @@ const menuToggle = document.getElementById('navbarSupportedContent')
 navLinks.forEach((l) => {
     l.addEventListener('click', () => { new bootstrap.Collapse(menuToggle).toggle() })
 })
+
+window.addEventListener("load", async () => {
+    try {
+        let data = await fetch("https://flyluman.onrender.com/whoami");
+        if (data.ok) {
+            console.log('OK')
+        }
+    } catch {
+        console.log('ERROR')
+    }
+});
